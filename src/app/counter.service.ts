@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { CounterResponse } from './counter.model';
 
 @Injectable({
   providedIn: 'root',
@@ -7,8 +8,8 @@ import { Observable, of } from 'rxjs';
 export class CounterService {
   constructor() {}
 
-  counterReset(): Observable<number> {
+  counterReset(): Observable<CounterResponse> {
     console.log('Sent to API');
-    return of(1);
+    return of({ type: 'success' });
   }
 }
